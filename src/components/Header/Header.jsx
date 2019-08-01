@@ -35,6 +35,9 @@ export default () => {
                     <Link to="/08-useEffect">
                         <li>useEffect Example</li>
                     </Link>
+                    <Link to="/09-prop-types">
+                        <li>Prop Types</li>
+                    </Link>
                 </ul>
             </nav>
         </header>

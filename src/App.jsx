@@ -13,6 +13,7 @@ import RenderingLists from './components/examples/05-rendering-lists/RenderingLi
 import Forms from './components/examples/06-forms/Forms'
 import LiftingStateUp from './components/examples/07-lifting-state-up/LiftingStateUp'
 import UseEffectExample from './components/examples/08-useEffect/UseEffectExample'
+import PropTypesExample from './components/examples/09-prop-types/PropTypesExample'
 
 function App() {
     return (
@@ -53,6 +54,11 @@ function App() {
                             path="/08-useEffect"
                             exact
                             component={UseEffectExample}
+                        />
+                        <Route
+                            path="/09-prop-types"
+                            exact
+                            component={PropTypesExample}
                         />
                     </Switch>
                 </main>
