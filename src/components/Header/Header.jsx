@@ -38,6 +38,9 @@ export default () => {
                     <Link to="/09-prop-types">
                         <li>Prop Types</li>
                     </Link>
+                    <Link to="/10-url-parameters/red">
+                        <li>URL Parameter</li>
+                    </Link>
                 </ul>
             </nav>
         </header>

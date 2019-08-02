@@ -26,6 +26,8 @@ code {
 
 main {
     flex: 1;
+    max-height: 100%;
+    overflow: auto;
 }
 
 main > * {
