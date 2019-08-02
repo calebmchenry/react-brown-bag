@@ -14,7 +14,9 @@ import Forms from './components/examples/06-forms/Forms'
 import LiftingStateUp from './components/examples/07-lifting-state-up/LiftingStateUp'
 import UseEffectExample from './components/examples/08-useEffect/UseEffectExample'
 import PropTypesExample from './components/examples/09-prop-types/PropTypesExample'
-import UrlParameterExample from './components/examples/10-url-parameters/UrlParameterExample'
+const UrlParameterExample = React.lazy(() =>
+    import('./components/examples/10-url-parameters/UrlParameterExample')
+)
 
 function App() {
     return (
@@ -22,51 +24,53 @@ function App() {
             <div className={styles.app}>
                 <Header />
                 <main>
-                    <Switch>
-                        <Route path="/" exact component={Home} />
-                        <Route path="/01-jsx" exact component={BasicJSX} />
-                        <Route
-                            path="/02-function-vs-class-component"
-                            exact
-                            component={FunctionComponent}
-                        />
-                        <Route
-                            path="/03-props-vs-state"
-                            exact
-                            component={Parent}
-                        />
-                        <Route
-                            path="/04-conditional-rendering"
-                            exact
-                            component={ConditionalRendering}
-                        />
-                        <Route
-                            path="/05-rendering-lists"
-                            exact
-                            component={RenderingLists}
-                        />
-                        <Route path="/06-forms" exact component={Forms} />
-                        <Route
-                            path="/07-lifting-state-up"
-                            exact
-                            component={LiftingStateUp}
-                        />
-                        <Route
-                            path="/08-useEffect"
-                            exact
-                            component={UseEffectExample}
-                        />
-                        <Route
-                            path="/09-prop-types"
-                            exact
-                            component={PropTypesExample}
-                        />
-                        <Route
-                            path="/10-url-parameters/:color"
-                            exact
-                            component={UrlParameterExample}
-                        />
-                    </Switch>
+                    <React.Suspense fallback={<div>Loading...</div>}>
+                        <Switch>
+                            <Route path="/" exact component={Home} />
+                            <Route path="/01-jsx" exact component={BasicJSX} />
+                            <Route
+                                path="/02-function-vs-class-component"
+                                exact
+                                component={FunctionComponent}
+                            />
+                            <Route
+                                path="/03-props-vs-state"
+                                exact
+                                component={Parent}
+                            />
+                            <Route
+                                path="/04-conditional-rendering"
+                                exact
+                                component={ConditionalRendering}
+                            />
+                            <Route
+                                path="/05-rendering-lists"
+                                exact
+                                component={RenderingLists}
+                            />
+                            <Route path="/06-forms" exact component={Forms} />
+                            <Route
+                                path="/07-lifting-state-up"
+                                exact
+                                component={LiftingStateUp}
+                            />
+                            <Route
+                                path="/08-useEffect"
+                                exact
+                                component={UseEffectExample}
+                            />
+                            <Route
+                                path="/09-prop-types"
+                                exact
+                                component={PropTypesExample}
+                            />
+                            <Route
+                                path="/10-url-parameters/:color"
+                                exact
+                                component={UrlParameterExample}
+                            />
+                        </Switch>
+                    </React.Suspense>
                 </main>
             </div>
         </BrowserRouter>
