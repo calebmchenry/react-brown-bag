@@ -5,6 +5,7 @@ import styles from './Parent.module.css'
 
 export default () => {
     const [count, setCount] = useState(0)
+
     const incrementCount = () => {
         setCount(count + 1)
     }

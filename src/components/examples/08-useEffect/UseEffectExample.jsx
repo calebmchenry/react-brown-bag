@@ -4,11 +4,6 @@ export default () => {
     const [name, setName] = useState('')
     const [isMayor, setIsMayor] = useState(false)
 
-    const getDadJoke = () =>
-        fetch('https://icanhazdadjoke.com/', {
-            headers: { Accept: 'application/json' },
-        })
-
     useEffect(() => {
         console.log('Initial render')
     }, []) // [] means this is only ran on initial render
@@ -18,11 +13,15 @@ export default () => {
     }, [name]) // Specifying dependencies cause this to only run when thos dependencies change
 
     useEffect(() => {
-        getDadJoke()
-            .then(r => r.json())
-            .then(data => {
-                console.log(data.joke)
+        async function getDadJoke() {
+            const response = await fetch('https://icanhazdadjoke.com/', {
+                headers: { Accept: 'application/json' },
             })
+            const data = await response.json();
+            console.log(data.joke);
+        }
+
+        getDadJoke();
         console.log('Component rendered')
     }) // With no array this is called every render
 

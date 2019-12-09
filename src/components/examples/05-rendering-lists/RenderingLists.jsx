@@ -1,18 +1,21 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 
 export default () => {
     const [todos, setTodos] = useState([])
-    const inputRef = useRef(null)
+    const [inputValue, setInputValue] = useState('');
 
     const addTodo = () => {
-        const todo = inputRef.value
-        setTodos([...todos, todo])
+        setTodos([...todos, inputValue])
+    }
+
+    function handleInputChange(e) {
+        setInputValue(e.target.value)
     }
 
     return (
         <div>
             <h1>Rendering Lists</h1>
-            <input ref={inputRef} type="text" />
+            <input type="text" value={inputValue} onChange={handleInputChange} />
             <button onClick={addTodo}>Add</button>
 
             <ul>
