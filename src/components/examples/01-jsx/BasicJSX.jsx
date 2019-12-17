@@ -12,12 +12,19 @@ export default function BasicJSX() {
         // ✅ Component must return a single root element 
         <form>
             {/* ✅ "{}" for JavaScript inside JSX */}
-            <h2>{title}</h2>
-            {/* ✅ forHtml instead of for */}
+            <h2>{title + " My name is Caleb!"}</h2>
+            {/* ✅ htmlFor instead of for */}
             <label htmlFor="name">Name</label>
             <input id="name" type="text" />
+            {/* ✅ className instead of class */}
             {/* ✅ onClick instead of onclick */}
-            <button className="primary-btn" type="button" onClick={handleButtonClicked}>Submit</button>
+            <button
+                className="primary-btn"
+                type="button"
+                onClick={handleButtonClicked}
+            >
+                Submit
+            </button>
         </form>
     )
 }

@@ -5,6 +5,9 @@ export default () => {
     const [inputValue, setInputValue] = useState('');
 
     const addTodo = () => {
+        if (inputValue === '') {
+            return;
+        }
         setTodos([...todos, inputValue])
     }
 

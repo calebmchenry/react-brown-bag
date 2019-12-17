@@ -6,9 +6,6 @@ import styles from './Header.module.css'
 export default () => {
     return (
         <header className={styles.header}>
-            <h1>
-                <Link to="/">React Demo</Link>
-            </h1>
             <nav>
                 <ul>
                     <Link to="/01-jsx">

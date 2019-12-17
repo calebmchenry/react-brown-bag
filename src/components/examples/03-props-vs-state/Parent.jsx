@@ -6,10 +6,11 @@ import styles from './Parent.module.css'
 export default () => {
     const [count, setCount] = useState(0)
 
-    const incrementCount = () => {
+    function incrementCount() {
         setCount(count + 1)
     }
-    const decrementCount = () => {
+
+    function decrementCount() {
         setCount(count - 1)
     }
 

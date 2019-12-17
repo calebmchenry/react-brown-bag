@@ -22,7 +22,7 @@ console.log(name) // John Doe
 console.log(age) // 24
 
 const bar = [1, 2, 3, 4, 5, 6]
-const [value1, value2] = bar
+const [value1, value2, , , value3] = bar
 console.log(value1) // 1
 console.log(value2) // 2
 
